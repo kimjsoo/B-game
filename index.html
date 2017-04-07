@@ -8,7 +8,7 @@
             	width:128px;
                 height:128px;
                 position:absolute;
-            	background:url('http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_025.gif') center;
+            	background:url('https://review.ctostream.ca/Content/images/google-loading-icon.gif') center;
                 background-size: 128px 128px;
             }
         </style>
@@ -24,24 +24,19 @@
                   for (var lx=0, ly=0; el != null; lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
                       return {x: lx,y: ly};
                   }
-
 			function change_direction() {
 				var newtemp = Math.floor((Math.random() * 4) + 1); 
                 if (newtemp == 1) { new_direction = "up"; }
                 if (newtemp == 2) { new_direction = "down"; }
                 if (newtemp == 3) { new_direction = "left"; }
                 if (newtemp == 4) { new_direction = "right"; }
-
 			}
-
         	function move_character() {
                 character = document.getElementById("character_1");
-
-
 				if (new_direction == "left") {
 					old_x = getPos(character).x;
 					old_y = getPos(character).y;
-                    old_x--;
+                    old_x-=10;
 					if (old_x > 0) {
                 		character.style.left = old_x;
                     }
@@ -49,28 +44,26 @@
                 } else if (new_direction == "right") {
 					old_x = getPos(character).x;
 					old_y = getPos(character).y;
-                    old_x++;
+                    old_x+=10;
 					if (old_x < (window.innerWidth - 128)) {
                 		character.style.left = old_x;
                     }
 				} else if (new_direction == "up") {
 					old_x = getPos(character).x;
 					old_y = getPos(character).y;
-                    old_y--;
+                    old_y-=10;
 					if (old_y > 0) {
                 		character.style.top = old_y;
                     }
                 
                 
                 } else if (new_direction == "down") {
-
 					old_x = getPos(character).x;
 					old_y = getPos(character).y;
-                    old_y++;
+                    old_y+=10;
 					if (old_y < (window.innerHeight - 128)) {
                 		character.style.top = old_y;
                     }
-
                 } else {
                 	new_direction = "right";
                 }
@@ -85,8 +78,7 @@
         </div>
 		<script>
         	setInterval("move_character()",1);
-        	setInterval("change_direction()",500);
-
+        	setInterval("change_direction()",1000);
         </script>
         
         
